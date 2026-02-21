@@ -10,7 +10,27 @@
 <body>
     <div class="container min-vh-100 d-flex justify-content-center align-items-center">
         <div class="card clockCard calculator rounded border-2 shadow-lg p-4">
-            <h3 class="mb-3">⏰</h3>
+            <h3 class="mb-3">⏰ Digital Clock</h3>
+
+            <div id="clock" class="display mb-4">00:00:00</div>
+
+            <hr>
+
+            <h4 class="mt-3">⌛ Countdown Timer</h4>
+
+            <input
+            type="text"
+            id="timeInput"
+            class="form-control mb-3"
+            placeholder="Enter seconds">
+
+            <div class="d-flex gap-2 justify-content-center mb-3">
+                <button class="btn btn-success" id="startBtn">Start</button>
+                <button class="btn btn-warning" id="stopBtn">Stop</button>
+                <button class="btn btn-danger" id="resetBtn">Reset</button>
+            </div>
+
+            <div id="timerDisplay" class="display text-center">00</div>
         </div>
     </div>
 

@@ -5,6 +5,8 @@ const taskCount = document.getElementById('taskCount');
 
 let tasks = [];
 
+loadTasks();
+
 addBtn.addEventListener('click', () => {
     const taskText = taskInput.value.trim();
 
@@ -13,13 +15,47 @@ addBtn.addEventListener('click', () => {
     tasks.push(taskText);
 
     taskInput.value = '';
-});
 
-function randomTasks() {
-    const li = document.createElement('li');
-    li.classname = "list-group-tem d-flex justify-content-between align-items-center";
-    li.innterHTML = `
-        <span>${task}</span>
-        <button class="btn btn-outline-danger btn-sm">🚮</button>
-    `;
-};
+    saveTasks();
+    renderTasks();
+})
+
+function renderTasks() {
+    taskList.innerHTML = "";
+
+    tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+        li.innterHTML = `
+            <span>${task}</span>
+            <button class="btn btn-outline-danger btn-sm">🚮</button>
+        `;
+
+        li.querySelector('button').addEventListener('click', () => {
+            deleteTask(index);
+        })
+
+        taskList.appendChild(li);
+    })
+
+    taskCount.textContent = tasks.length;
+}
+
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    renderTasks();
+    saveTasks();
+}
+
+function saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const storedTasks = localStorage.getItem('tasks');
+
+    if(storedTasks) {
+        tasks = JSON.parse(storedTasks);
+        renderTasks();
+    }
+}

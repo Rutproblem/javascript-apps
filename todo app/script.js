@@ -26,7 +26,7 @@ function renderTasks() {
     tasks.forEach((task, index) => {
         const li = document.createElement('li');
         li.className = "list-group-item d-flex justify-content-between align-items-center";
-        li.innterHTML = `
+        li.innerHTML = `
             <span>${task}</span>
             <button class="btn btn-outline-danger btn-sm">🚮</button>
         `;

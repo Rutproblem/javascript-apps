@@ -13,5 +13,13 @@ addBtn.addEventListener('click', () => {
     tasks.push(taskText);
 
     taskInput.value = '';
-    console.log(tasks);
 });
+
+function randomTasks() {
+    const li = document.createElement('li');
+    li.classname = "list-group-tem d-flex justify-content-between align-items-center";
+    li.innterHTML = `
+        <span>${task}</span>
+        <button class="btn btn-outline-danger btn-sm">🚮</button>
+    `;
+};

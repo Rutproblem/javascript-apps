@@ -33,5 +33,9 @@ function showWeather(data) {
     weatherResult.innerHTML =`
     <h4>${data.name}</h4>
     <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
+    <p class="fs-3">${Math.round(data.main.temp)}°C</p>
+    <p class="text-capitalize">${data.weather[0].description}</p>
+    <p>💧 Humidity ${data.main.humidity}%</p>
+    <p>☁ Wind ${data.wind.speed} km/h</p>
     `;
 }

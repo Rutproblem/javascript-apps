@@ -82,7 +82,7 @@ function showAnimation(isCorrect) {
 
 function checkAnswer(selectedIndex) {
     const correctIndex = questions[currentQuestion].correct;
-    const isCorrct = selectedIndex === correctIndex;
+    const isCorrect = selectedIndex === correctIndex;
 
     if(isCorrect) {
         score++;

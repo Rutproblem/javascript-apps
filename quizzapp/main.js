@@ -29,3 +29,25 @@ const questions = [
         correct: 1
     },
 ];
+
+// DOM ELEMENTS
+let currentQuestion = 0;
+let score = 0;
+let animationOverlay = document.getElementById('animationOverlay');
+let animationIcon = document.getElementById('animationIcon');
+let animationText = document.getElementById('animationText');
+let questionEl = document.getElementById('question');
+let answersEl = document.getElementById('answers');
+let progressEl = document.getElementById('progress');
+
+function showQuestion() {
+    const q = questions[currentQuestion];
+
+    questionEl.innerText = q.question;
+    answersEl.innterHTML = "";
+
+    q.answers.forEach((answer, index) => {
+        
+    })
+
+}

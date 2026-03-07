@@ -44,7 +44,7 @@ function showQuestion() {
     const q = questions[currentQuestion];
 
     questionEl.innerText = q.question;
-    answersEl.innterHTML = "";
+    answersEl.innerHTML = "";
 
     q.answers.forEach((answer, index) => {
         const button = document.createElement('button');
@@ -64,12 +64,12 @@ function showQuestion() {
 function showAnimation(isCorrect) {
     if(isCorrect) {
         animationText.innerText = "Correct answer!";
-        animationText.className = "correctText!";
+        animationText.className = "correctText";
         animationIcon.innerText = "✅";
     }
     else {
         animationText.innerText = "Wrong answer!";
-        animationText.className = "wrongText!";
+        animationText.className = "wrongText";
         animationIcon.innerText = "❌";
     }
 
@@ -103,7 +103,7 @@ function checkAnswer(selectedIndex) {
 }
 
 function showResult() {
-    questionEl.innerText = `🎉Congrats, your score is: ${score} / ${questioins.length}🎉`;
+    questionEl.innerText = `🎉Congrats, your score is: ${score} / ${questions.length}🎉`;
     answersEl.innerHTML = "";
     progressEl.innerText = "";
 

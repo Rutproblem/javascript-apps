@@ -47,13 +47,13 @@ body {
     animation: slideUp 0.5s ease-out;
 }
 
-.correctText {
+/* .correctText {
 
 }
 
 .wrongText {
 
-}
+} */
 
 @keyframes scaleIn {
     0% {
